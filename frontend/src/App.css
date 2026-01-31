@@ -11,8 +11,36 @@
 }
 
 .App-header h1 {
-  margin: 0;
+  margin: 0 0 16px 0;
   font-size: 1.8rem;
+}
+
+/* NavBar */
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.nav-bar button {
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 20px;
+  background: #0f3460;
+  color: #aaa;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nav-bar button:hover {
+  background: #1a4a7a;
+  color: #fff;
+}
+
+.nav-bar button.active {
+  background: #e94560;
+  color: #fff;
 }
 
 .App-main {
@@ -101,4 +129,54 @@
   background: #ff4444;
   border-radius: 8px;
   text-align: center;
+}
+
+/* SoulPrices */
+.soul-prices .soul-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.update-time {
+  margin: 0 0 16px 0;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.soul-prices .soul-header h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.soul-prices .soul-header button {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  background: #0f3460;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.soul-prices .soul-header button:hover:not(:disabled) {
+  background: #1a4a7a;
+}
+
+.soul-prices .soul-header button:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
+.soul-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.price-card.empty {
+  background: #16213e;
+  opacity: 0.6;
 }

@@ -14,7 +14,7 @@ function PriceCard({ itemName, average, count, itemId }) {
         
         <p className="price-text">
             {/* 세자리 단위 콤마*/}
-            평균 가격: <span>{average?.toLocaleString()}</span> 골드
+            평균가 : <span>{average?.toLocaleString()}</span> 골드
         </p>
        
       </div>
