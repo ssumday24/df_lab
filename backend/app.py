@@ -1,7 +1,7 @@
-# FLASK 서버
+# FLASK 서버파일
 from flask import Flask , jsonify
 import requests
-from config import Api_key # config.py 가져오기 
+from config import API_KEY # config.py 가져오기 
 from flask_cors import CORS  #리액트와 통신
 
 from auction_sold import get_item_price_average
@@ -9,6 +9,10 @@ from auction_sold import get_item_price_average
 
 app= Flask(__name__)
 CORS(app) # 리액트(3000) - Flask(5000) 포트연결
+
+@app.route('/')
+def home():
+   return "메인홈"
 
 @app.route('/api/prices/<item_name>')
 def get_any_item_price(item_name):

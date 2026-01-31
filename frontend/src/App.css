@@ -1,38 +1,104 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  min-height: 100vh;
+  background: #1a1a2e;
+  color: #fff;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+  background: #16213e;
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.App-main {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* SearchBar */
+.search-bar {
   display: flex;
-  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #0f3460;
+  color: #fff;
+}
+
+.search-bar input::placeholder {
+  color: #888;
+}
+
+.search-bar button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #e94560;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-bar button:hover:not(:disabled) {
+  background: #ff6b6b;
+}
+
+.search-bar button:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
+/* PriceCard */
+.price-card {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 16px;
+  padding: 20px;
+  background: #16213e;
+  border-radius: 12px;
+  border: 1px solid #0f3460;
 }
 
-.App-link {
-  color: #61dafb;
+.price-card .item-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  background: #0f3460;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.price-card .item-info h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+}
+
+.price-card .price-text {
+  margin: 0;
+  color: #aaa;
+}
+
+.price-card .price-text span {
+  color: #ffd700;
+  font-weight: bold;
+}
+
+/* Error */
+.error-message {
+  padding: 12px;
+  background: #ff4444;
+  border-radius: 8px;
+  text-align: center;
 }

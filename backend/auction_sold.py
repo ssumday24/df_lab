@@ -12,7 +12,7 @@ def get_item_price_average(item_name):
     url = "https://api.neople.co.kr/df/auction-sold"
 
     params={
-        "itemName" : "item_name",
+        "itemName" : item_name,
         "wordType" : "match",
         "apikey" : API_KEY,
         "limit" : 50  # row 수  
@@ -31,10 +31,14 @@ def get_item_price_average(item_name):
         # 2.평균 계산
         average = sum(prices) / len(prices)
 
-        # 딕셔너리 자료형 반환 
+        # 첫 번째 row에서 itemId 추출 -> itemid 없으면 ''
+        item_id = rows[0].get('itemId', '')
+
+        # 딕셔너 반환
         return{
             "average": round(average),
             "count" : len(prices),
+            "itemId": item_id,
             "status": "success"
         }
 
